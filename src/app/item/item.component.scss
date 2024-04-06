@@ -1,0 +1,27 @@
+:host {
+  color: var(--item-color);
+  font-family: var(--item-font-family);
+  font-size: var(--item-font-size);
+  font-weight: var(--item-font-weight);
+  font-style: var(--item-font-style);
+
+  transition: transform 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.15, 1.15);
+  }
+
+  a {
+    padding: .5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    gap: 1rem;
+
+    .title {
+      width: fit-content;
+    }
+  }
+}

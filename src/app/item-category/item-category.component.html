@@ -1,0 +1,12 @@
+@if (editMode()) {
+  <div class="header">
+    {{categoryName}}
+  </div>
+}
+<div class="container">
+  @for (item of items; track $index) {
+    <item [url]="item.url" [imageUrl]="item.imageUrl">
+      {{item.name}}
+    </item>
+  }
+</div>

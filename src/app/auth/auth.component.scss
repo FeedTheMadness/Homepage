@@ -1,0 +1,33 @@
+a {
+  display: block;
+  padding: 1rem 2rem;
+  border-radius: .8rem;
+
+  background-color: var(--auth-bg-color);
+  color: var(--auth-color);
+  font-family: var(--auth-font-family);
+  font-size: var(--auth-font-size);
+  font-weight: var(--auth-font-weight);
+  font-style: var(--auth-font-style);
+
+  span {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      bottom: 0;
+      width: 100%;
+      background-color: #ffffff;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.2s ease-out;
+    }
+  }
+
+  &:hover span::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}

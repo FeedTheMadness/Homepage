@@ -1,0 +1,20 @@
+.header {
+  color: var(--category-color);
+  font-family: var(--category-font-family);
+  font-size: var(--category-font-size);
+  font-weight: var(--category-font-weight);
+  font-style: var(--category-font-style);
+  background-color: var(--category-bg-color);
+
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-end;
+
+  gap: 1rem;
+}

@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "reset";
+
+:root {
+  --text-color: #ffffff;
+  --bg-color: #101515;
+
+  --link-color: #1eaedb;
+
+  --auth-bg-color: #282c34;
+  --auth-color: #eeeeee;
+  --auth-font-family: "FantasqueSansMono", sans-serif;
+  --auth-font-size: 1.5rem;
+  --auth-font-weight: 400;
+  --auth-font-style: normal;
+
+  --footer-color: #eeeeee;
+  --footer-font-family: "FantasqueSansMono", sans-serif;
+  --footer-font-size: 1.5rem;
+  --footer-font-weight: 400;
+  --footer-font-style: normal;
+
+  --category-bg-color: #161c1c;
+  --category-color: #eeeeee;
+  --category-font-family: "FantasqueSansMono", sans-serif;
+  --category-font-size: 1.8rem;
+  --category-font-weight: 500;
+  --category-font-style: normal;
+
+  --item-color: #1eaedb;
+  --item-font-family: "FantasqueSansMono", sans-serif;
+  --item-font-size: 1.2rem;
+  --item-font-weight: 400;
+  --item-font-style: normal;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+@font-face {
+  font-family: FantasqueSansMono;
+  src: url('./assets/fonts/FantasqueSansMono-Regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+  url('./assets/fonts/FantasqueSansMono-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}

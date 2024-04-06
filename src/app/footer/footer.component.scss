@@ -1,0 +1,50 @@
+:host {
+  padding: .5rem 1rem;
+
+  color: var(--footer-color);
+  font-family: var(--footer-font-family);
+  font-size: var(--footer-font-size);
+  font-weight: var(--footer-font-weight);
+  font-style: var(--footer-font-style);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  a {
+    color: var(--link-color);
+  }
+
+  #email {
+    cursor: pointer;
+    user-select: none;
+
+    transition: color ease-out 0.5s;
+    &:active {
+      color: var(--link-color);
+      transition: none;
+    }
+  }
+
+  .left {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .center {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .right {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    gap: 1rem;
+  }
+}
