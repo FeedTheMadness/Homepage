@@ -18,9 +18,9 @@ export class HomeComponent {
   list: Category[] = []
 
   constructor(private itemsService: ItemsService) {
-    /*this.itemsService.list().subscribe(list => {
-      this.list = list;
-    })*/
-    this.list = this.itemsService.list();
+    //this.itemsService.list().subscribe(list => {
+    //  this.list = list;
+    //})
+    this.list = this.itemsService.staticList();
   }
 }

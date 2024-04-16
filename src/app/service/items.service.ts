@@ -8,15 +8,14 @@ export class ItemsService {
 
   constructor(private httpClient: HttpClient) {
   }
-  /*
   list(): Observable<Category[]> {
     return this.httpClient.get<Category[]>("http://localhost:8080/api/v1/categories", {
       headers: {
         "HTTP": "clems"
       }
     });
-  }*/
-  list(): Category[] {
+  }
+  staticList(): Category[] {
     return items;
   }
 

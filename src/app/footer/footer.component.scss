@@ -1,11 +1,9 @@
 :host {
-  padding: .5rem 1rem;
+  margin-top: 2rem;
+  padding: 1rem 1rem;
+  border-top: #eeeeee inset;
 
-  color: var(--footer-color);
-  font-family: var(--footer-font-family);
-  font-size: var(--footer-font-size);
-  font-weight: var(--footer-font-weight);
-  font-style: var(--footer-font-style);
+  @import "../../scss/footer";
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -29,21 +27,21 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .center {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .right {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 
     gap: 1rem;
   }

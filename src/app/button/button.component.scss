@@ -1,0 +1,10 @@
+div {
+  padding: 1rem 2rem;
+  border-radius: .8rem;
+
+  cursor: pointer;
+
+  @import "../../scss/button";
+
+  @import "../../scss/underline-animation";
+}
