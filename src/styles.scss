@@ -6,6 +6,9 @@
   --text-color: #ffffff;
   --bg-color: #101515;
 
+  --primary-border-radius: .25rem;
+
+  --primary: #1eaedb;
   --link-color: #1eaedb;
 
   --auth-bg-color: #282c34;
@@ -35,6 +38,25 @@
   --item-font-style: normal;
 }
 
+*:focus-visible {
+  position: relative;
+  outline: none;
+
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    content: "";
+
+    border-radius: var(--primary-border-radius);
+
+    outline: var(--primary) solid .15rem;
+    outline-offset: .3rem;
+  }
+}
+
 body {
   color: var(--text-color);
   background-color: var(--bg-color);
@@ -45,3 +67,4 @@ body {
   src: url('./assets/fonts/FantasqueSansMono-Regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
   url('./assets/fonts/FantasqueSansMono-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
 }
+

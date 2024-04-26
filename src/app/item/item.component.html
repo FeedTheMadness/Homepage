@@ -1,6 +1,19 @@
-<a [href]="url">
-  <img [src]="imageUrl" width="120"/>
+@if (!editing) {
+  <a class="card" [href]="url">
+    <ng-container *ngTemplateOutlet="card" />
+  </a>
+} @else {
+  <button class="card edit" [class]="editAnimationTiming()">
+    <button class="btn">
+      <img src="assets/img/close.svg" />
+    </button>
+    <ng-container *ngTemplateOutlet="card" />
+  </button>
+}
+
+<ng-template #card>
+  <img [src]="imageUrl" />
   <div class="title">
-    <ng-content />
+    <span><ng-content /></span>
   </div>
-</a>
+</ng-template>

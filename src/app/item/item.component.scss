@@ -7,11 +7,16 @@
 
   transition: transform 0.2s ease-out;
 
+  //scaling
   &:hover {
-    transform: scale(1.15, 1.15);
+    transform: scale(1.15);
+
+    .card .btn {
+      transform: scale(2);
+    }
   }
 
-  a {
+  .card {
     padding: .5rem;
 
     display: flex;
@@ -19,9 +24,70 @@
     align-items: center;
 
     gap: 1rem;
+    width: 9rem;
+
+    img {
+      width: 8rem;
+      object-fit: contain;
+    }
 
     .title {
-      width: fit-content;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+  }
+
+  //edit
+  .card {
+    position: relative;
+
+    .btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 1.5rem;
+      height: 1.5rem;
+
+      border-radius: 50%;
+      border: none;
+
+      font-size: 1.5rem;
+
+      background-color: #ff000055;
+      color: #eeeeee;
+
+      transition: .1s;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 50%;
+      }
     }
   }
 }
+
+  //animation
+  .edit {
+    animation: ease-in-out .15s wiggle alternate infinite;
+
+    @keyframes wiggle {
+      from {
+        transform: rotate(2deg);
+      }
+      to {
+        transform: rotate(-2deg);
+      }
+    }
+
+    @for $i from 0 through 10 {
+      &.timing#{$i} {
+        animation-delay: - random(200) + ms;
+      }
+    }
+  }
+

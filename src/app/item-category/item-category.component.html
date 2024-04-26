@@ -1,12 +1,21 @@
-@if (editMode()) {
-  <div class="header">
-    {{categoryName}}
+<div class="header">
+  <div>
+    <span>{{categoryName}}</span>
   </div>
-}
+  <button (click)="edit()">
+    <img src="assets/img/pen.svg" />
+  </button>
+</div>
+
 <div class="container">
   @for (item of items; track $index) {
-    <item [url]="item.url" [imageUrl]="item.imageUrl">
+    <item [editing]="isEditing()" [url]="item.url" [imageUrl]="item.imageUrl">
       {{item.name}}
+    </item>
+  }
+  @if (isEditing()) {
+    <item [url]="itemAdd.url" [imageUrl]="itemAdd.imageUrl">
+      {{itemAdd.name}}
     </item>
   }
 </div>

@@ -8,3 +8,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+button {
+  all: unset;
+  outline: revert;
+  & > *:is(img) {
+    display: block;
+  }
+}

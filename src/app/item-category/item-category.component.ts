@@ -19,13 +19,21 @@ export class ItemCategoryComponent {
   @Input() categoryName: string = "category";
   @Input({alias: "items"}) itemsProp: Item[] = [];
 
-  editMode(): boolean {
-    return this.editModeService.editMode();
+  editing: boolean = false;
+
+  isEditing(): boolean {
+    return this.editing;
   }
 
-  get items() {
-    return this.editModeService.editMode()
-      ? [...this.itemsProp, this.itemsService.itemAdd()]
-      : this.itemsProp;
+  edit(): void {
+    this.editing = !this.editing;
+  }
+
+  get items(): Item[] {
+    return this.itemsProp;
+  }
+
+  get itemAdd(): Item {
+    return this.itemsService.itemAdd;
   }
 }

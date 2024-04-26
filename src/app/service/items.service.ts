@@ -19,11 +19,11 @@ export class ItemsService {
     return items;
   }
 
-  itemAdd(): Item {
+  get itemAdd(): Item {
     return {
       "name": "Add item",
-      "url": "https://ftmnet.com",
-      "imageUrl": "../../assets/img/plus.svg"
+      "url": "#",
+      "imageUrl": "assets/img/plus.svg"
     }
   }
 }
