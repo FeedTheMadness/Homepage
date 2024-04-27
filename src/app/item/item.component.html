@@ -3,17 +3,22 @@
     <ng-container *ngTemplateOutlet="card" />
   </a>
 } @else {
-  <button class="card edit" [class]="editAnimationTiming()">
+  <button class="card edit">
+    <ng-container *ngTemplateOutlet="card"/>
+
     <button class="btn">
-      <img src="assets/img/close.svg" />
+      <img src="assets/img/close.svg"/>
     </button>
-    <ng-container *ngTemplateOutlet="card" />
   </button>
 }
 
 <ng-template #card>
-  <img [src]="imageUrl" />
-  <div class="title">
-    <span><ng-content /></span>
+  <div class="card-content">
+    <div class="img-container">
+      <img class="logo" [src]="imageUrl"/>
+    </div>
+    <div class="title">
+      <span><ng-content/></span>
+    </div>
   </div>
 </ng-template>

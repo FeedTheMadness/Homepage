@@ -16,12 +16,4 @@ export class ItemComponent {
   @Input({ required: true }) url: string = "";
   @Input({ required: true }) imageUrl: string = "";
   @Input({ required: false }) editing: boolean = true;
-
-  edit(): void {
-    this.editing = !this.editing;
-  }
-
-  editAnimationTiming(): string {
-    return "timing" + Math.floor(Math.random() * 10);
-  }
 }

@@ -1,79 +1,109 @@
 :host {
+  width: fit-content;
+  height: fit-content;
+
   color: var(--item-color);
   font-family: var(--item-font-family);
   font-size: var(--item-font-size);
   font-weight: var(--item-font-weight);
   font-style: var(--item-font-style);
+}
 
-  transition: transform 0.2s ease-out;
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: .5rem;
 
   //scaling
+  transition: transform 0.2s ease-out;
+
   &:hover {
     transform: scale(1.15);
 
-    .card .btn {
+    .btn {
       transform: scale(2);
     }
   }
 
-  .card {
-    padding: .5rem;
+  .title {
+    max-width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    text-overflow: fade;
+
+    white-space: wrap;
+    text-align: center;
+    vertical-align: center;
+  }
+}
+
+.card-content {
+  $size: 8rem;
+
+  position: relative;
+
+  width: $size;
+
+  display: grid;
+  grid-template-rows: $size 1fr;
+  align-items: center;
+
+  row-gap: 1rem;
+
+  .img-container {
+    width: 100%;
+    height: 100%;
 
     display: flex;
-    flex-flow: column nowrap;
+    justify-items: center;
     align-items: center;
 
-    gap: 1rem;
-    width: 9rem;
-
-    img {
-      width: 8rem;
-      object-fit: contain;
-    }
-
-    .title {
-      white-space: nowrap;
-      text-align: center;
-    }
-
-  }
-
-  //edit
-  .card {
-    position: relative;
-
-    .btn {
-      position: absolute;
-      top: 0;
-      right: 0;
-
-      width: 1.5rem;
-      height: 1.5rem;
-
-      border-radius: 50%;
-      border: none;
-
-      font-size: 1.5rem;
-
-      background-color: #ff000055;
-      color: #eeeeee;
-
-      transition: .1s;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        width: 50%;
-      }
+    .logo {
+      width: 100%;
     }
   }
 }
 
-  //animation
+//edit
+button.card {
+  position: relative;
+
+  .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border-radius: 50%;
+    border: none;
+
+    font-size: 1.5rem;
+
+    background-color: #ff000055;
+    color: #eeeeee;
+
+    transition: .1s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 50%;
+    }
+  }
+}
+
+//animation
+:host {
+
   .edit {
-    animation: ease-in-out .15s wiggle alternate infinite;
+    animation: ease-in-out 150ms wiggle alternate infinite;
 
     @keyframes wiggle {
       from {
@@ -83,11 +113,13 @@
         transform: rotate(-2deg);
       }
     }
-
-    @for $i from 0 through 10 {
-      &.timing#{$i} {
-        animation-delay: - random(200) + ms;
-      }
-    }
   }
 
+  $threshold: 12;
+  @for $i from 0 through ($threshold - 1) {
+    &:nth-child(#{$threshold}n + #{$i}) .edit {
+      animation-delay: - random(300) + ms;
+      animation-duration: 125 + random(50) + ms;
+    }
+  }
+}
