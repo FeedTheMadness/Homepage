@@ -3,19 +3,15 @@
     <span>{{categoryName}}</span>
   </div>
   <button (click)="edit()">
-    <img src="assets/img/pen.svg" />
+    <img [alt]="'edit category ' + categoryName" src="assets/img/pen.svg" />
   </button>
 </div>
 
 <div class="container">
   @for (item of items; track $index) {
-    <item [editing]="isEditing()" [url]="item.url" [imageUrl]="item.imageUrl">
-      {{item.name}}
-    </item>
+    <item [editing]="isEditing()" [name]="item.name" [url]="item.url" [imageUrl]="item.imageUrl" />
   }
   @if (isEditing()) {
-    <item [url]="itemAdd.url" [imageUrl]="itemAdd.imageUrl">
-      {{itemAdd.name}}
-    </item>
+    <item [name]="itemAdd.name" [url]="itemAdd.url" [imageUrl]="itemAdd.imageUrl" />
   }
 </div>

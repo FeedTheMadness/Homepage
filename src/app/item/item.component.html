@@ -4,10 +4,10 @@
   </a>
 } @else {
   <button class="card edit">
-    <ng-container *ngTemplateOutlet="card"/>
+    <ng-container *ngTemplateOutlet="card" />
 
     <button class="btn">
-      <img src="assets/img/close.svg"/>
+      <img [alt]="'close item ' + name + ' icon'" ngSrc="assets/img/close.svg" width="50" height="50" />
     </button>
   </button>
 }
@@ -15,10 +15,10 @@
 <ng-template #card>
   <div class="card-content">
     <div class="img-container">
-      <img class="logo" [src]="imageUrl"/>
+      <img class="logo" [alt]="name + ' logo'" [ngSrc]="imageUrl" fill />
     </div>
     <div class="title">
-      <span><ng-content/></span>
+      <span>{{name}}</span>
     </div>
   </div>
 </ng-template>

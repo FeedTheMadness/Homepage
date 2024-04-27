@@ -4,7 +4,15 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+
+  .left {
+    position: relative;
+
+    img {
+      width: 12rem;
+    }
+  }
 
   .right {
     display: flex;

@@ -13,6 +13,7 @@ import {NgComponentOutlet, NgOptimizedImage, NgTemplateOutlet} from "@angular/co
   styleUrl: './item.component.scss'
 })
 export class ItemComponent {
+  @Input({ required: true }) name: string = "";
   @Input({ required: true }) url: string = "";
   @Input({ required: true }) imageUrl: string = "";
   @Input({ required: false }) editing: boolean = true;
