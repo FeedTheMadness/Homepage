@@ -11,6 +11,6 @@ RUN npm run build
 
 FROM nginx:1.25-alpine
 
-COPY --from=build /usr/local/app/dist/ftmnet-homepage-old /usr/share/nginx/html
+COPY --from=build /usr/local/app/dist/ftmnet-homepage-old/browser /usr/share/nginx/html
 
 EXPOSE 80
